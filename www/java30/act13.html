@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="site-wrap">
+
+    <h1>Leonardo DaVinci</h1>
+
+    <p>El hombre del Renacimiento por excelencia, nació el 15 de abril de 1452 en Italia. Está ampliamente considerado como uno de los más grandes pintores de todos los tiempos y quizá, la persona con los más variados talentos de la historia.</p>
+    <p>Sus pinturas son famosas por una serie de cualidades que han sido muy imitadas por estudiantes, y discutidas por los aficionados y los críticos: sus técnicas innovadoras, su detallado conocimiento de anatomía, luz, botánica y geología, su interés en fisionomía y la forma en que los humanos registran emoción.</p>
+    <p>Entre sus obras más famosas se encuentran: La Gioconda (Mona Lisa) -actualmente en el museo del Louvre de París-, La última cena y La Virgen de las Rocas.</p>
+   
+    <img src="http://www.leonardodavinci.net/images/leonardo-da-vinci.jpg" class="align-left slide-in">
+
+    <p>Frecuentemente descrito como un arquetipo y símbolo del hombre del Renacimiento, genio universal, además de filósofo humanista cuya curiosidad infinita solo puede ser equiparable a su capacidad inventiva, Leonardo da Vinci es considerado como uno de los más grandes pintores de todos los tiempos y, probablemente, es la persona con el mayor número de talentos en múltiples disciplinas que jamás ha existido. Como ingeniero e inventor, Leonardo desarrolló ideas muy adelantadas a su tiempo, tales como el helicóptero, el carro de combate, el submarino y el automóvil. Muy pocos de sus proyectos llegaron a construirse (entre ellos la máquina para medir el límite elástico de un cable), puesto que la mayoría no eran realizables durante esa época. Como científico, Leonardo da Vinci hizo progresar mucho el conocimiento en las áreas de anatomía, la ingeniería civil, la óptica y la hidrodinámica.</p>
+
+    <img src="http://files.arte-anatomia.webnode.com.co/200000006-ed7bfee774/craneo.jpg" class="align-right slide-in">
+
+    <p> Su asociación histórica más famosa es la pintura, siendo dos de sus obras más célebres, La Gioconda y La Última Cena, copiadas y parodiadas en varias ocasiones, al igual que su dibujo del Hombre de Vitruvio, que llegaría a ser retomado en numerosos trabajos derivados. No obstante, únicamente se conocen alrededor de 20 obras suyas, debido principalmente a sus constantes (y a veces desastrosos) experimentos con nuevas técnicas y a su inconstancia crónica. Este reducido número de creaciones, junto con sus cuadernos que contienen dibujos, diagramas científicos y reflexiones sobre la naturaleza de la pintura, constituyen un legado para las sucesivas generaciones de artistas</p>
+
+    <img src="https://cdn.thinglink.me/api/image/757227332975984641/1240/10/scaletowidth" class="align-left slide-in">
+
+    <p>El humanismo renacentista no ve polaridades mutuamente excluyentes entre la ciencia y las artes. Los estudios de Leonardo en ciencias en ingeniería son tan impresionantes e innovadores como su obra artística, y fueron registrados en sus diarios y cuadernos de notas, que comprenden 13.000 páginas de texto y dibujos, asociando arte y filosofía natural (precedente de la ciencia moderna). Tales notas eran realizadas y puestas al día de manera cotidiana a lo largo de toda la vida y viajes de Leonardo. De manera constante se esfuerza por hacer observaciones del mundo que le rodea,73​ consciente y orgulloso de ser, como él se definía, un «iletrado», autodidacta y lúcido observador de fenómenos naturales a menudo alejados de lo que se aprendía en la escuela.</p>
+
+    <p>Estos diarios están en su mayor parte redactados usando escritura especular, también llamada "en espejo", lo que pudo haberse debido más a razones prácticas, por ser este método de escritura más rápido, que a razones de cifrado, como se ha sugerido tantas veces. Dado que Leonardo escribía con la mano izquierda, le resultaba más cómodo hacerlo de derecha a izquierda. Sus notas y dibujos, estando fechados los más antiguos en 1475,74​ muestran una gran variedad de intereses y de preocupaciones, incluso simples listas de la compra o de dinero prestado. Hay composiciones de cuadros, estudios de detalles y de tapices, estudios sobre las expresiones faciales, animales, disecciones, bebés, estudios de botánica y geología, máquinas de guerra, máquinas voladoras y trabajos de arquitectura.73​</p>
+   
+    <img src="https://geeksroom.com/wp-content/uploads/2014/02/british-library-da-vinci-notebooks.jpg" class="align-right slide-in">
+
+    <p>En la década de 1490, estudió matemáticas al lado de Luca Pacioli y realizó una serie de dibujos de sólidos regulares en una forma esquelética para que formaran parte del libro Divina Proportione (1509).17​ Estaba fascinado por la idea de lo absoluto y lo universal.26​ Sin embargo, su cultura matemática era fundamentalmente práctica, con las limitaciones propias de los abacistes de su tiempo, con algunos conocimientos de la geometría euclidiana, de perspectiva y de mecánica, en la línea de lo que sabían los teóricos de su tiempo. Sin embargo, Leonardo concibió un instrumento con un sistema articulado destinado a permitir una solución mecánica para el problema de Alhazen, una cuestión esencialmente técnica, que testimonia un conocimiento profundo de las propiedades de la cónica.</p>
+    
+
+
+
+  </div>
+
+  <script>
+    function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+    const sliderImages = document.querySelectorAll('.slide-in');
+    function checkSlide() {
+      sliderImages.forEach(sliderImage => {
+        // half way through the image
+        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+        // bottom of the image
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+        const isHalfShown = slideInAt > sliderImage.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        if (isHalfShown && isNotScrolledPast) {
+          sliderImage.classList.add('active');
+        } else {
+          sliderImage.classList.remove('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', debounce(checkSlide));
+  </script>
+
+  <style>
+    html {
+      box-sizing: border-box;
+      background:#C5B274;
+      font-family:'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+    }
+    body {
+      margin: 0;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    .site-wrap {
+      max-width: 700px;
+      margin: 100px auto;
+      background:white;
+      padding:40px;
+      text-align: justify;
+    }
+    .align-left {
+      float:left;
+      margin-right:20px;
+    }
+    .align-right {
+      float:right;
+      margin-left:20px;
+    }
+    .slide-in {
+      opacity:0;
+      transition:all .5s;
+    }
+    .align-left.slide-in {
+      transform:translateX(-30%) scale(0.95);
+    }
+    .align-right.slide-in {
+      transform:translateX(30%) scale(0.95);
+    }
+    .slide-in.active {
+      opacity:1;
+      transform:translateX(0%) scale(1);
+    }
+  </style>
+
+</body>
+</html>
