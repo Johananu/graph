@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="act24.css">
+</head>
+<body>
+
+  <header>
+    <h1>A story about getting lost.</h1>
+  </header>
+
+  <nav id="main">
+    <ul>
+      <li class="logo"><a href="#">LOST.</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Images</a></li>
+      <li><a href="#">Locations</a></li>
+      <li><a href="#">Maps</a></li>
+    </ul>
+  </nav>
+
+  <div class="site-wrap">
+    <p>Un día cualquiera de la primavera de 1907, un niño de dos años de edad es llevado en brazos por la joven sirvienta de la casa, saltando a la vista del pequeño el color rojo del suelo que van pisando, y el de la escalera que queda a su izquierda..</p>
+    <p>Un día cualquiera de la primavera de 1907, un niño de dos años de edad es llevado en brazos por la joven sirvienta de la casa, saltando a la vista del pequeño el color rojo del suelo que van pisando, y el de la escalera que queda a su izquierda..</p>
+    <p>Un día cualquiera de la primavera de 1907, un niño de dos años de edad es llevado en brazos por la joven sirvienta de la casa, saltando a la vista del pequeño el color rojo del suelo que van pisando, y el de la escalera que queda a su izquierda..</p>
+    <p>Un día cualquiera de la primavera de 1907, un niño de dos años de edad es llevado en brazos por la joven sirvienta de la casa, saltando a la vista del pequeño el color rojo del suelo que van pisando, y el de la escalera que queda a su izquierda..</p>
+    <p>Un día cualquiera de la primavera de 1907, un niño de dos años de edad es llevado en brazos por la joven sirvienta de la casa, saltando a la vista del pequeño el color rojo del suelo que van pisando, y el de la escalera que queda a su izquierda..</p>
+    <p>Un día cualquiera de la primavera de 1907, un niño de dos años de edad es llevado en brazos por la joven sirvienta de la casa, saltando a la vista del pequeño el color rojo del suelo que van pisando, y el de la escalera que queda a su izquierda..</p>
+    <p>Un día cualquiera de la primavera de 1907, un niño de dos años de edad es llevado en brazos por la joven sirvienta de la casa, saltando a la vista del pequeño el color rojo del suelo que van pisando, y el de la escalera que queda a su izquierda..</p>
+    <p>Un día cualquiera de la primavera de 1907, un niño de dos años de edad es llevado en brazos por la joven sirvienta de la casa, saltando a la vista del pequeño el color rojo del suelo que van pisando, y el de la escalera que queda a su izquierda..</p>
+    <p>Un día cualquiera de la primavera de 1907, un niño de dos años de edad es llevado en brazos por la joven sirvienta de la casa, saltando a la vista del pequeño el color rojo del suelo que van pisando, y el de la escalera que queda a su izquierda..</p>
+    <p>Un día cualquiera de la primavera de 1907, un niño de dos años de edad es llevado en brazos por la joven sirvienta de la casa, saltando a la vista del pequeño el color rojo del suelo que van pisando, y el de la escalera que queda a su izquierda..</p>
+  </div>
+
+  <script>
+  
+    const nav = document.querySelector('#main');
+    let topOfNav = nav.offsetTop;
+    function fixNav() {
+      if(window.scrollY >= topOfNav) {
+        document.body.style.paddingTop = nav.offsetHeight + 'px';
+        document.body.classList.add('fixed-nav');
+      } else {
+        document.body.classList.remove('fixed-nav');
+        document.body.style.paddingTop = 0;
+      }
+    }
+    window.addEventListener('scroll', fixNav);
+  </script>
+
+
+</body>
+</html>

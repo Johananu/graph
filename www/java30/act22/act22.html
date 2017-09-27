@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sigue la palabra</title>
+  <link rel="stylesheet" href="act22.css">
+</head>
+<body>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="">PALABRA1</a></li>
+        <li><a href="">PALABRA2</a></li>
+        <li><a href="">PALABRA3</a></li>
+        <li><a href="">PALABRA4</a></li>
+        <li><a href="">PALABRA5</a></li>
+      </ul>
+    </nav>
+
+    <div class="wrapper">
+      <p>En 1970, desafiando la física clásica,<a href="">PALABRA6</a>unos pocos científicos de Estados Unidos y Europa <a href="">PALABRA7</a> comenzaron a buscar un camino a través del desorden.</p>
+      <p>Matemáticos, físicos, fisiólogos, economistas, químicos, biólogos, <a href="">PALABRA8</a> intentaron buscar conexiones entre diferentes tipos de irregularidades; <a href="">PALABRA9</a> la mayor parte de los fenómenos en la naturaleza son no-lineales, “incontrolables”.</p>
+      <p>Todo lo investigado se relacionaba directa y formalmente con el mundo natural <a href="">PALABRA10</a>-las formas de las nubes, <a href="">PALABRA11</a> las bifurcaciones arteriales, la textura pulmonar, las agrupaciones de estrellas, etc.  <a href="">PALABRA12</a> La búsqueda de una explicación <a href="">PALABRA13</a> configuró la Teoría del Caos.</p>
+      <p>El sustento de esta nueva ciencia, <a href="">PALABRA14</a>que algunos consideran disciplina<a href="">PALABRA15</a> se debe al matemático, físico y filósofo francés Henri Poincaré.</p>
+      </div>
+
+<script>
+  const triggers = document.querySelectorAll('a');
+  const highlight = document.createElement('span');
+  highlight.classList.add('highlight');
+  document.body.appendChild(highlight);
+  function highlightLink() {
+    const linkCoords = this.getBoundingClientRect();
+    console.log(linkCoords);
+    const coords = {
+      width: linkCoords.width,
+      height: linkCoords.height,
+      top: linkCoords.top + window.scrollY,
+      left: linkCoords.left + window.scrollX
+    };
+    highlight.style.width = `${coords.width}px`;
+    highlight.style.height = `${coords.height}px`;
+    highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
+  }
+  triggers.forEach(a => a.addEventListener('mouseenter', highlightLink));
+</script>
+</body>
+</html>
